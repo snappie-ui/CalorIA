@@ -37,7 +37,7 @@ class BaseResearcher:
         self.openai_api_key = os.getenv('OPENAI_API_KEY')
         self.openai_model = os.getenv('OPENAI_MODEL', 'gpt-4')
         self.ollama_base_url = os.getenv('OLLAMA_BASE_URL', 'http://localhost:11434')
-        self.ollama_model = os.getenv('OLLAMA_MODEL', 'llama2')
+        self.ollama_model = os.getenv('OLLAMA_MODEL', 'tinyllama:latest')
 
         # Initialize AI client
         if self.ai_provider == 'openai':
@@ -101,7 +101,7 @@ class BaseResearcher:
             response = requests.post(
                 f"{self.ollama_base_url}/api/generate",
                 json=payload,
-                timeout=120
+                timeout=300
             )
 
             if response.status_code != 200:
