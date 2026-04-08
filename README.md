@@ -1,5 +1,5 @@
 CalorIA – Technical README
-Overview
+## Overview
 
 CalorIA is a full-stack calorie tracking application designed to help users monitor their meals, nutrition, and basic health metrics such as weight and water intake. The system combines a Flask-based backend, a React frontend, and a MongoDB database. In addition, it includes a custom CLI for managing workflows and an AI-powered research module for expanding ingredient and recipe data .
 
@@ -17,7 +17,7 @@ This is a 10–15 minute walkthrough covering:
 Watch the video here:
 https://drive.google.com/file/d/1joXq9kk9KRAQdaPGHXjAT_ISB8FD4_Nz/view?usp=drive_link
 
-Architecture
+## Architecture
 
 The application follows a layered architecture with clear separation of concerns:
 
@@ -31,7 +31,7 @@ Flow of Data
 
 User requests originate from the frontend, pass through the Flask API, and interact with MongoDB. The CLI can directly trigger backend processes, including AI-based research and database seeding.
 
-Project Structure
+## Project Structure
 
 The project is organized to keep logic modular and maintainable:
 
@@ -44,7 +44,7 @@ docker-compose.yml: Container orchestration
 
 This structure allows independent development and testing of different parts of the system.
 
-Key Technical Decisions
+## Key Technical Decisions
 
 One of the main design choices was using MongoDB instead of a relational database. Since recipes and ingredients can have varying structures, a flexible schema made it easier to store and extend data, especially when integrating AI-generated content.
 
@@ -56,7 +56,7 @@ AI functionality was kept as a separate layer, rather than embedding it deeply i
 
 Finally, Docker was used to standardize the environment and make the project easier to run and evaluate across different systems.
 
-AI Usage
+## AI Usage
 
 The AI component is used to automatically discover and generate new ingredients and recipes.
 
@@ -86,7 +86,7 @@ Validation checks before inserting into the database
 
 This approach helps maintain consistency and prevents uncontrolled or irrelevant data generation.
 
-Risks and Limitations
+## Risks and Limitations
 
 One of the primary concerns is AI hallucination, where the model may generate incorrect or unrealistic data. This is partially handled through validation and controlled prompts, but it cannot be fully eliminated.
 
@@ -98,7 +98,7 @@ The CLI, while powerful, may not be intuitive for all users, especially those un
 
 Finally, the current stack is suitable for development and moderate usage, but scaling to high traffic would require further optimization.
 
-Extension Approach
+## Extension Approach
 
 The system is designed to be extended in multiple directions.
 
